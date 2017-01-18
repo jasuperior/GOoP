@@ -53,5 +53,5 @@ Using this Graph Model, and a well formatted graph, even documentation like **th
 *  Interpolation of Data in Edge : Being able to place variable data within Edge calls.
 * d
 
-[logo]: (./goop.logo.png)
-[Model]: (./Goop-interface.png)
+[logo]: ./goop.logo.png
+[Model]:  ./Goop-interface.png
