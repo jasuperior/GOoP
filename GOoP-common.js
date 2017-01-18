@@ -245,56 +245,7 @@
         console.log(result);
         return result;
     });
-    function a() {
-        for (var _len2 = arguments.length, object = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-            object[_key2] = arguments[_key2];
-        }
 
-        // console.log(this);
-        var subject = Object.create(object.splice(object.length - 1)[0]);
-        if (object.length) {
-            object.map(function (adjective) {
-                return Object.assign(subject, adjective);
-            });
-        }
-        return subject;
-    }
-    a.gtype("article");
-
-    (0, _GOoP.Node)("a", a);
-    (0, _GOoP.Node)("an", a);
-    (0, _GOoP.Node)("the", function the(object) {
-        return object;
-    }.gtype("article"));
-    (0, _GOoP.Node)("is", function (value) {
-        Object.assign(this, value);
-        return this;
-    }.gtype("verb"));
-
-    (0, _GOoP.Node)("jamel", { age: 17, skin: "brown", "hair": "bald" });
-    (0, _GOoP.Node)("grow", function (amount) {
-        // console.log(this, amount);
-        if (amount) this.age += amount;else this.age++;
-        return this;
-    }.gtype("verb"));
-    // Node(["ran","run"])
-    (0, _GOoP.Node)("shotup", function (amount) {
-        // console.log(this, amount);
-        "this grow 6.";
-        "this grow 8.";
-
-        console.log(this.__state);
-        return this;
-    }.gtype("verb"));
-    (0, _GOoP.Node)("smart", { intelligence: 1000 });
-    (0, _GOoP.Node)("happy", { emotion: "happy" });
-    (0, _GOoP.Node)(",", function () {
-        // console.log(this);
-        return this;
-    }.gtype("comma"));
-    (0, _GOoP.Node)("'s", function (key) {
-        return this[key];
-    }.gtype("possession"));
     // GOoP.Graph(()=>{
     //     /* articles */
     //

@@ -39,16 +39,84 @@ Using this Graph Model, and a well formatted graph, even documentation like **th
 ### Getting Started
 ...
 #### GOoP Global Object
-
+To access all of the GOoP Primitives, you must import the global object.
+```javascript
+    import {Terminator, Alias, Graph, Node, Edge, Rule} from "GOoP";
+```
 
 ### Primitives
+The Primitives are methods which act as the entry point into the programming  paradigm. Using any of the below methods, you can begin constructing your graph in the fashion which matches your intent.
+
 #### Node
 #### Edge
-
+#### Rule
+#### Terminator
+#### Alias
+#### Graph
 
 ### Syntax
 #### Expression
 #### Declaration
+
+
+### Common GOoP
+Common Goop is a set of rules and nodes which allow you to get started with some common English words and parts of speech which make it easy to start coding hassle free. It is not required to use, however, using Common Goop in most cases would be preferred by most who wish to write code like English Sentences.
+
+Example:
+```javascript
+function a ( ...object ){
+    // console.log(this);
+    var subject = Object.create(object.splice(object.length-1)[0]);
+    if(object.length){
+        object.map((adjective)=>Object.assign(subject, adjective));
+    }
+    return subject;
+}
+a.gtype("article");
+
+Node("a", a);
+Node("an", a);
+Node("the", function the ( object ){
+    return object;
+}.gtype("article"));
+Node("is", function( value ){
+    Object.assign(this,value);
+    return this;
+}.gtype("verb"));
+
+Node("jamel", { age: 17, skin: "brown", "hair": "bald" });
+Node("grow", function( amount ){
+    // console.log(this, amount);
+    if(amount) this.age+=amount;
+    else this.age++;
+    return this;
+}.gtype("verb"));
+// Node(["ran","run"])
+Node("shotup",  function( amount ){
+    // console.log(this, amount);
+    "this grow 6.";
+    return this;
+}.gtype("verb"))
+Node("years",  function( amount ){
+    return this;
+}.gtype("verb"))
+Node("smart", {intelligence: 1000});
+Node("happy", {emotion: "happy"});
+Node(",", function(){
+    // console.log(this);
+    return this;
+}.gtype("comma"))
+Node("'s", function( key ){
+    return this[key];
+}.gtype("possession"))
+
+Graph(()=>{
+console.log("jamel grow 2 years."); //Node {age: 19, skin: "brown", hair: "bald", __records: Array[3]}
+console.log("jamel is smart.")//Node {age: 19, skin: "brown", hair: "bald", __records: Array[3], intelligence: 1000}
+console.log("jamel's age.") //19
+console.log("jamel shotup.")//Node {age: 25, skin: "brown", hair: "bald", __records: Array[3], intelligence: 1000}
+})
+```
 ### Roadmap
 *  Interpolation of Data in Edge : Being able to place variable data within Edge calls.
 * d

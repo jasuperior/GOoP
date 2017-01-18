@@ -188,50 +188,7 @@ Rule("possession", function(before,after,btrail,atrail, obj){
     console.log(result);
     return result;
 })
-function a ( ...object ){
-    // console.log(this);
-    var subject = Object.create(object.splice(object.length-1)[0]);
-    if(object.length){
-        object.map((adjective)=>Object.assign(subject, adjective));
-    }
-    return subject;
-}
-a.gtype("article");
 
-Node("a", a);
-Node("an", a);
-Node("the", function the ( object ){
-    return object;
-}.gtype("article"));
-Node("is", function( value ){
-    Object.assign(this,value);
-    return this;
-}.gtype("verb"));
-
-Node("jamel", { age: 17, skin: "brown", "hair": "bald" });
-Node("grow", function( amount ){
-    // console.log(this, amount);
-    if(amount) this.age+=amount;
-    else this.age++;
-    return this;
-}.gtype("verb"));
-// Node(["ran","run"])
-Node("shotup",  function( amount ){
-    // console.log(this, amount);
-    "this grow 6.";
-    "this grow 8.";
-    console.log(this.__state);
-    return this;
-}.gtype("verb"))
-Node("smart", {intelligence: 1000});
-Node("happy", {emotion: "happy"});
-Node(",", function(){
-    // console.log(this);
-    return this;
-}.gtype("comma"))
-Node("'s", function( key ){
-    return this[key];
-}.gtype("possession"))
 // GOoP.Graph(()=>{
 //     /* articles */
 //
