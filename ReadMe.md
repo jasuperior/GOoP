@@ -122,4 +122,4 @@ console.log("jamel shotup.")//Node {age: 25, skin: "brown", hair: "bald", __reco
 * d
 
 [logo]: ./goop.logo.png
-[Model]:  ./Goop-interface.png
+[Model]:  ./Goop-Interface.png
